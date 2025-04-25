@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function Home() {
   const [form, setForm] = useState({ name: "", email: "", dob: "" });
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await fetch("http://localhost:5000/api/birthdays", {
       method: "POST",
